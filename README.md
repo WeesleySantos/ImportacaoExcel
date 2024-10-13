@@ -4,8 +4,7 @@ Passo a passo
 
 Primeiro - Rodar script da tabela no banco de dados:
 
-
-Script Banco - USE [master]
+USE [master]
 GO
 /****** Object:  Database [DadosPlanilha]    Script Date: 13/10/2024 18:43:45 ******/
 CREATE DATABASE [DadosPlanilha]
@@ -110,13 +109,15 @@ USE [master]
 GO
 ALTER DATABASE [DadosPlanilha] SET  READ_WRITE 
 GO
-------------------------------------------------------------------------------------------------------------------------------------------------------------
-Segundo - no Projeto API em appsetings -  colocar o caminho do seu banco.
+
+
+Segundo  passo - no Projeto API em appsetings -  colocar o caminho do seu banco.
 {
   "ConnectionStrings": {
     "DefaultConnection": "Server=PC-GAMER;Database=DADOSPLANILHA;User Id=sa;Password=admin123;TrustServerCertificate=True;"
   }, 
--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 Importação de Planilhia:
 para importar a planilha na tela inicial, basta clicar em escolher arquivo, após escolher o arquivo, clicar em Upload.. 
 Obs: Arquivo que contém um milão de linhas demora certa de 3 minutos para inserir os dados no banco e mostrar na tela.
