@@ -2,7 +2,7 @@
 
 Passo a passo
 
-Primeiro - Rodar script da tabela no banco de dados:
+Primeiro - Rodar script da tabela no banco de dados: SQLSERVER
 
 USE [master]
 GO
