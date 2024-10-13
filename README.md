@@ -120,4 +120,4 @@ Segundo  passo - no Projeto API em appsetings -  colocar o caminho do seu banco.
 
 Importação de Planilhia:
 para importar a planilha na tela inicial, basta clicar em escolher arquivo, após escolher o arquivo, clicar em Upload.. 
-Obs: Arquivo que contém um milão de linhas demora certa de 3 minutos para inserir os dados no banco e mostrar na tela.
+Obs: Arquivo que contém um milhão de linhas demora certa de 3 minutos para inserir os dados no banco e mostrar na tela.
