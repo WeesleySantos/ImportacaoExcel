@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Asteria\\Asteria_API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{499D6C96-3D9F-4212-9043-ACB5BC1530D6}|Asteria\\Asteria.csproj|d:\\asteria\\asteria_api\\asteria\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{499D6C96-3D9F-4212-9043-ACB5BC1530D6}|Asteria\\Asteria.csproj|solutionrelative:asteria\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04C26F95-D348-47FE-AD8D-92E7AE449770}|Asteria_API\\Asteria_API.csproj|d:\\asteria\\asteria_api\\asteria_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04C26F95-D348-47FE-AD8D-92E7AE449770}|Asteria_API\\Asteria_API.csproj|solutionrelative:asteria_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Asteria\\Asteria_API\\Asteria\\Program.cs",
+              "RelativeDocumentMoniker": "Asteria\\Program.cs",
+              "ToolTip": "D:\\Asteria\\Asteria_API\\Asteria\\Program.cs",
+              "RelativeToolTip": "Asteria\\Program.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T21:15:54.915Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Asteria\\Asteria_API\\Asteria_API\\Program.cs",
+              "RelativeDocumentMoniker": "Asteria_API\\Program.cs",
+              "ToolTip": "D:\\Asteria\\Asteria_API\\Asteria_API\\Program.cs",
+              "RelativeToolTip": "Asteria_API\\Program.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T21:15:23.934Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asteria_API", "Asteria_API\Asteria_API.csproj", "{04C26F95-D348-47FE-AD8D-92E7AE449770}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{7400ACCD-8E71-4B37-898B-5FCC78502A34}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEnd", "FrontEnd", "{DAA7D223-2371-4C40-9F22-E2521981ADF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asteria", "Asteria\Asteria.csproj", "{499D6C96-3D9F-4212-9043-ACB5BC1530D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04C26F95-D348-47FE-AD8D-92E7AE449770}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04C26F95-D348-47FE-AD8D-92E7AE449770}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04C26F95-D348-47FE-AD8D-92E7AE449770}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04C26F95-D348-47FE-AD8D-92E7AE449770}.Release|Any CPU.Build.0 = Release|Any CPU
+		{499D6C96-3D9F-4212-9043-ACB5BC1530D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{499D6C96-3D9F-4212-9043-ACB5BC1530D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{499D6C96-3D9F-4212-9043-ACB5BC1530D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{499D6C96-3D9F-4212-9043-ACB5BC1530D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{04C26F95-D348-47FE-AD8D-92E7AE449770} = {7400ACCD-8E71-4B37-898B-5FCC78502A34}
+		{499D6C96-3D9F-4212-9043-ACB5BC1530D6} = {DAA7D223-2371-4C40-9F22-E2521981ADF9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A76AD2EE-0B31-4EAC-ACAB-90DF56500516}
+	EndGlobalSection
+EndGlobal

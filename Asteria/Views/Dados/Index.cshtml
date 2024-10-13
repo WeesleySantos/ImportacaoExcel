@@ -1,0 +1,153 @@
+﻿<style>
+    .spinner-border {
+        width: 3rem;
+        height: 3rem;
+        display: block;
+        margin: 0 auto;
+    }
+</style>
+<div class="container mt-5">
+    <h1>@ViewData["Title"]</h1>
+
+    <form asp-controller="Dados" asp-action="Upload" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <input type="file" name="file" class="form-control" />
+        </div>
+
+        <div class="mt-4">
+            <button type="submit" class="btn btn-primary">Upload</button>
+        </div>
+    </form>
+
+    <div id="loadingSpinner" style="display:none; text-align: center;">
+        <div class="spinner-border text-primary" role="status"></div>
+        <div>Carregando...</div>
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div id="success-alert" class="alert alert-success" role="alert">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+    else if (TempData["ErrorMessage"] != null)
+    {
+        <div id="error-alert" class="alert alert-danger" role="alert">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
+    <h2 class="mt-5">Dados da Planilha</h2>
+    <table class="table table-bordered mt-3" id="dataTable">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Código do Cliente</th>
+                <th>Categoria do Produto</th>
+                <th>Sku/Produto</th>
+                <th>Data</th>
+                <th>Quantidade</th>
+                <th>Valor do Faturamento</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            <div class="mt-3">
+                <button id="previousPageBtn" class="btn btn-primary">Página Anterior</button>
+                <button id="nextPageBtn" class="btn btn-primary">Próxima Página</button>
+            </div>
+        </ul>
+    </nav>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        setTimeout(function () {
+            var successAlert = document.getElementById('success-alert');
+            var errorAlert = document.getElementById('error-alert');
+
+            if (successAlert) {
+                successAlert.style.display = 'none';
+            }
+
+            if (errorAlert) {
+                errorAlert.style.display = 'none';
+            }
+        }, 6000);
+
+        let lastId = null; 
+        let isPreviousPage = false; 
+        const pageSize = 15; 
+        const form = document.querySelector('form');
+        const uploadBtn = document.getElementById('uploadBtn');
+        const loadingSpinner = document.getElementById('loadingSpinner');
+
+        form.addEventListener('submit', function () {
+            loadingSpinner.style.display = 'block';
+            uploadBtn.disabled = true; 
+        });
+
+        function fetchDados() {
+            const xhr = new XMLHttpRequest();
+            const url = `/Dados/BuscarDados?lastId=${lastId}&pageSize=${pageSize}&isPreviousPage=${isPreviousPage}`;
+            xhr.open('GET', url, true);
+
+            xhr.onload = function () {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    const response = JSON.parse(xhr.responseText);
+                    const dados = response.data;
+
+                    if (dados.length > 0) {
+                        lastId = dados[dados.length - 1].id;
+                    }
+
+                    const tbody = document.querySelector('#dataTable tbody');
+                    tbody.innerHTML = ''; 
+
+                    dados.forEach(d => {
+                        const dataFormatada = d.data.split('T')[0];
+                        const valorFaturamentoFormatado = (d.valorFaturamento / 100).toFixed(2);
+
+                        const row = `<tr>
+                            <td>${d.id}</td>
+                            <td>${d.codigoCliente}</td>
+                            <td>${d.categoriaProduto}</td>
+                            <td>${d.skuProduto}</td>
+                            <td>${dataFormatada}</td>
+                            <td>${d.quantidade}</td>
+                            <td>${valorFaturamentoFormatado}</td>
+                        </tr>`;
+                        tbody.innerHTML += row;
+                    });
+
+                    document.getElementById('nextPageBtn').disabled = (dados.length < pageSize && !isPreviousPage);
+                    document.getElementById('previousPageBtn').disabled = (lastId === null);
+                } else {
+                    console.error(`Erro ao buscar dados: ${xhr.status}`);
+                }
+            };
+
+            xhr.onerror = function () {
+                console.error("Erro na requisição.");
+            };
+
+            xhr.send();
+        }
+
+        fetchDados();
+
+        document.getElementById('nextPageBtn').addEventListener('click', function () {
+            isPreviousPage = false;
+            fetchDados();
+        });
+
+        document.getElementById('previousPageBtn').addEventListener('click', function () {
+            isPreviousPage = true;
+            fetchDados();
+        });
+    });
+</script>
