@@ -114,7 +114,7 @@ GO
 Segundo  passo - no Projeto API em appsetings -  colocar o caminho do seu banco.
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Server=PC-GAMER;Database=DADOSPLANILHA;User Id=sa;Password=admin123;TrustServerCertificate=True;"
+    "DefaultConnection": "Caminho do seu banco"
   }, 
 
 
